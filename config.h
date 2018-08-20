@@ -5,7 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+/*static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";*/
+
+static char *font = "DejaVuSans Mono:size=12";
 static int borderpx = 2;
 
 /*
@@ -83,43 +85,42 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
-static const char *colorname[] = {
+const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	"#282A2E", /* t_current_line */
+	"#AC4142", /* b_red */
+	"#90A959", /* b_green */
+	"#DE935F", /* t_orange */
+	"#6A9FB5", /* b_blue */
+	"#AA759F", /* b_purple */
+	"#75B5AA", /* b_aqua */
+	"#707880", /* t_comment */
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	"#373B41", /* t_selection */
+	"#CC6666", /* t_red */
+	"#B5BD68", /* t_green */
+	"#F4BF75", /* t_yellow */
+	"#81A2BE", /* t_blue */
+	"#B294BB", /* t_purple */
+	"#8ABEB7", /* t_aqua */
+	"#C5C8C6", /* t_foreground */
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
+	"#1D1F21", /* t_background */
+	"#C5C8C6", /* t_foreground */
 };
-
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
+static unsigned int defaultcs = 11;
+static unsigned int defaultrcs = 256;
 
 /*
  * Default shape of cursor
