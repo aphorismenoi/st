@@ -5,9 +5,14 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-/*static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";*/
 
 static char *font = "DejaVuSans Mono:size=12";
+
+/* disable bold, italic and roman fonts globally */
+int disablebold = 1;
+int disableitalic = 0;
+int disableroman = 0;
+
 static int borderpx = 2;
 
 /*
@@ -179,6 +184,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
+        { ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+        { ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
 
 /*

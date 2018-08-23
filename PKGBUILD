@@ -15,6 +15,13 @@ source=(http://dl.suckless.org/st/$pkgname-$pkgver.tar.gz
 sha256sums=('c4fb0fe2b8d2d3bd5e72763e80a8ae05b7d44dbac8f8e3bb18ef0161c7266926'
             'bed7977c855f02e3968a754e813015e4214b52102e3c54712d8a52245bcceeec')
 
+_patches=(01-hidecursor.diff
+          02-scrollback.diff
+          03-clipboard.diff
+          04-disable_bold_italic_fonts.diff)
+
+source=(${source[@]} ${_patches[@]})
+
 prepare() {
   cd $srcdir/$pkgname-$pkgver
   # skip terminfo which conflicts with nsurses
@@ -24,6 +31,13 @@ prepare() {
 
 build() {
   cd $srcdir/$pkgname-$pkgver
+
+  echo "==> Applying Patches"
+  for p in "${_patches[@]}"; do
+    echo "  -> $p"
+    patch < ../$p || return 1
+  done
+
   make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
 }
 
