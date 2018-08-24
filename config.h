@@ -89,43 +89,43 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-/* Terminal colors (16 first used in escape sequence) */
-const char *colorname[] = {
-	/* 8 normal colors */
-	"#282A2E", /* t_current_line */
-	"#AC4142", /* b_red */
-	"#90A959", /* b_green */
-	"#DE935F", /* t_orange */
-	"#6A9FB5", /* b_blue */
-	"#AA759F", /* b_purple */
-	"#75B5AA", /* b_aqua */
-	"#707880", /* t_comment */
-
-	/* 8 bright colors */
-	"#373B41", /* t_selection */
-	"#CC6666", /* t_red */
-	"#B5BD68", /* t_green */
-	"#F4BF75", /* t_yellow */
-	"#81A2BE", /* t_blue */
-	"#B294BB", /* t_purple */
-	"#8ABEB7", /* t_aqua */
-	"#C5C8C6", /* t_foreground */
-
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#1D1F21", /* t_background */
-	"#C5C8C6", /* t_foreground */
+/*
+* base16-default-dark-theme.h
+*
+* Base16: (https://github.com/chriskempson/base16)
+*
+* Authors:
+*
+* Scheme: Chris Kempson (http://chriskempson.com)
+* Template: Honza Pokorny <me@honza.ca>
+*
+*/
+static const char *colorname[] = {
+  "#181818", /* base00 */
+  "#ab4642", /* base08 */
+  "#a1b56c", /* base0B */
+  "#f7ca88", /* base0A */
+  "#7cafc2", /* base0D */
+  "#ba8baf", /* base0E */
+  "#86c1b9", /* base0C */
+  "#d8d8d8", /* base05 */
+  "#585858", /* base03 */
+  "#dc9656", /* base09 */
+  "#282828", /* base01 */
+  "#383838", /* base02 */
+  "#b8b8b8", /* base04 */
+  "#e8e8e8", /* base06 */
+  "#a16946", /* base0F */
+  "#f8f8f8", /* base07 */
 };
-
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 257;
-unsigned int defaultbg = 256;
-static unsigned int defaultcs = 11;
-static unsigned int defaultrcs = 256;
+unsigned int defaultfg = 7;
+unsigned int defaultbg = 0;
+static unsigned int defaultcs = 13;
+static unsigned int defaultrcs = 0;
 
 /*
  * Default shape of cursor
