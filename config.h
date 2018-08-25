@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 
-static char *font = "DejaVuSans Mono:size=12";
+static char *font = "Monospace:size=12";
 
 /* disable bold, italic and roman fonts globally */
 int disablebold = 1;
@@ -186,6 +186,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
         { ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
         { ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+        { TERMMOD,              XK_U,           copyurl,        {.i =  0} },
 };
 
 /*

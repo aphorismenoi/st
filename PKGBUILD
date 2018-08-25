@@ -18,7 +18,9 @@ sha256sums=('c4fb0fe2b8d2d3bd5e72763e80a8ae05b7d44dbac8f8e3bb18ef0161c7266926'
 _patches=(01-hidecursor.diff
           02-scrollback.diff
           03-clipboard.diff
-          04-disable_bold_italic_fonts.diff)
+          04-disable_bold_italic_fonts.diff
+          05-copyurl.diff 
+          )
 
 source=(${source[@]} ${_patches[@]})
 
